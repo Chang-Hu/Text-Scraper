@@ -1,0 +1,16 @@
+Q: How to run the program?
+A: Handle two kinds of queries:
+	Query 1: (requires a single argument)
+	java -jar ShoppingScraper.jar <keyword> (e.g. java -jar ShoppingScraper.jar "digital camera")
+	Query 2: (requires two arguments)
+	java -jar ShoppingScraper.jar <keyword> <page number> (e.g. java -jar ShoppingScraper.jar "digital camera" 8)
+   
+Q: overview of code
+A: According to the number of arguments, the program calls different methods to either calculate total number of results or present all result information for all products in a specific page. Once finish retrieving the text format of a web page, program would call methods provided by Jsoup to parse the text and get elements containing product information.
+
+The code implementation is pretty straight forward. Methods include:
+	RetrieveContent --> connect to shopping.com and retrieve data
+	ResultNumber --> get the total number of results
+	showResultInfo --> display the list of product information
+	findPage --> compute the url of the Nth page of a query result
+	
